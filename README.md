@@ -36,7 +36,7 @@ discovering command modules by looking for anything beginning with
 hosts we plan to monitor (open an issue if we missed one):
 
 Provider|URL
-:-:|:-:
+:-:|-
 GitHub|<https://github.com>
 GitLab|<https://gitlab.com>
 Sourcehut|<https://sr.ht>
