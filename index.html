@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>🍱 CmdBox Central Command Register</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">🍱 CmdBox Central Command Register</h1>
+</header>
+<h1 id="cmdbox-central-command-register">🍱 CmdBox Central Command Register</h1>
+<p>Here’s where you explicitly publish your CmdBox command module to the world. For now, you can simply add your command module to the <a href="manifest">manifest</a> and submit a PR. That’s it. We’ll do the rest. Everything about your module can be derived from it. The GitHub PR process allows moderators to make sure only working, current command modules make it into the list.</p>
+<p>Do <em>not</em> submit placeholders or unfinished modules. Simple and silly modules are fine. Unfinished ones are not. Abuse of this project policy could result in blacklisting and automatic PR and detection rejection.</p>
+<h2 id="simple-space-delimited-manifest">Simple Space-Delimited Manifest</h2>
+<p>The plan is to follow a GitOps approach and make the <a href="manifest"><code>manifest</code></a> file the authoritative source for all registered or discovered command modules. (Even 10k entries would be under one MiB.) This file can also be fetched directly (and always will be available) from <code>cmdbox.sh/manifest</code>.</p>
+<pre><code>curl -LO cmdbox.sh/manifest</code></pre>
+<p>The <code>manifest</code> is a simple single-space-delimited table file with the first field the name of the command and the second the Go-importable URL. Developers are encouraged to implement caching into whatever tools they create that fetch this file (which is only updated once a day).</p>
+<h2 id="monitored-git-hosting-providers">Monitored Git Hosting Providers</h2>
+<p>Eventually, this project will contain the code for automatically discovering command modules by looking for anything beginning with <code>cmdbox-</code> hosted on any of the monitored Git providers. Here are the git hosts we plan to monitor (open an issue if we missed one):</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Provider</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">GitHub</td>
+<td><a href="https://github.com" class="uri">https://github.com</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">GitLab</td>
+<td><a href="https://gitlab.com" class="uri">https://gitlab.com</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Sourcehut</td>
+<td><a href="https://sr.ht" class="uri">https://sr.ht</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bitbucket</td>
+<td><a href="https://bitbucket.org" class="uri">https://bitbucket.org</a></td>
+</tr>
+</tbody>
+</table>
+<p>Note that when discovery is working the need for PRs will be diminished but not removed. Some projects may choose to not follow the <code>cmdbox-*</code> convention or be hosted on services where detection is not currently supported.</p>
+</body>
+</html>
