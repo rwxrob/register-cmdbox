@@ -3,7 +3,7 @@ foo github.com/rwxrob/cmdbox-foo
 fill github.com/rwxrob/cmdbox-fill
 gen github.com/rwxrob/cmdbox-gen
 help github.com/rwxrob/cmdbox-help
-isosec github.com/rwxrob/cmdbox-isosec
+isosec github.com/rossim2i2/cmdbox-isosec
 isterm github.com/rwxrob/cmdbox-isterm
 quotes github.com/rwxrob/cmdbox-quotes
 snip github.com/rwxrob/cmdbox-snip
