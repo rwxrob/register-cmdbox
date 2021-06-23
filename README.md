@@ -5,7 +5,7 @@ world. For now, you can simply add your command module to the
 [manifest](manifest) and submit a PR. That's it. We'll do the rest.
 Everything about your module can be derived from it. The GitHub PR
 process allows moderators to make sure only working, current command
-modules make it into the list. 
+modules make it into the list.
 
 Do *not* submit placeholders or unfinished modules. Simple and silly
 modules are fine. Unfinished ones are not. Abuse of this project policy
@@ -16,8 +16,8 @@ could result in blacklisting and automatic PR and detection rejection.
 The plan is to follow a GitOps approach and make the
 [`manifest`](manifest) file the authoritative source for all registered
 or discovered command modules. (Even 10k entries would be under one
-MiB.) This file can also be fetched directly and always will be
-available at this URL:
+MiB.) This file can also be fetched directly (and always will be
+available) from `cmdbox.sh/manifest`.
 
 ```
 curl -LO cmdbox.sh/manifest
